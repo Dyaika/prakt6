@@ -19,7 +19,7 @@ public class TestStudent {
         for (int i = 1; i < n; i++){
             cur_student = students[i];
             int j = i - 1;
-            while (j >= 0 && cur_student.getAverage_mark() < students[j].getAverage_mark()){
+            while (j >= 0 && cur_student.compareTo(students[j]) < 0){
                 students[j + 1] = students[j];
                 j--;
             }

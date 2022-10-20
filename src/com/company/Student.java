@@ -1,6 +1,6 @@
 package com.company;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private static int g_id = 0;
     private int id;
     private double average_mark;
@@ -36,6 +36,17 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        if (Double.compare(this.average_mark, o.average_mark) != 0){
+            return Double.compare(this.average_mark, o.average_mark);
+        } else if(this.id != o.id){
+            return Integer.compare(this.id, o.id);
+        } else{
+            return this.name.compareTo(o.name);
+        }
     }
 
     @Override
